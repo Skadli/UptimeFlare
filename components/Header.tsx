@@ -25,7 +25,7 @@ export default function Header({ style }: { style?: React.CSSProperties }) {
       <Container size="md" className={classes.inner}>
         <div>
           <a
-            href={location.pathname == '/' ? 'https://github.com/lyc8503/UptimeFlare' : '/'}
+            href={location.pathname == '/' ? 'https://status.mechat.top' : '/'}
             target={location.pathname == '/' ? '_blank' : undefined}
           >
             <Text size="xl" span>
@@ -38,7 +38,7 @@ export default function Header({ style }: { style?: React.CSSProperties }) {
               variant="gradient"
               gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
             >
-              UptimeFlare
+              meAI服务监控
             </Text>
           </a>
         </div>

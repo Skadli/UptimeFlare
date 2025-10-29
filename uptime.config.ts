@@ -241,26 +241,26 @@ const maintenances: MaintenanceConfig[] = [
   // This COULD BE DANGEROUS, as generating too many maintenance entries can lead to performance problems
   // Undeterministic outputs may also lead to bugs or unexpected behavior
   // If you don't know how to DEBUG, use this approach WITH CAUTION
-  ...(function () {
-    const schedules = []
-    const today = new Date()
+  // ...(function () {
+    // const schedules = []
+    // const today = new Date()
 
-    for (let i = -1; i <= 1; i++) {
-      // JavaScript's Date object will automatically handle year rollovers
-      const date = new Date(today.getFullYear(), today.getMonth() + i, 15)
-      const year = date.getFullYear()
-      const month = String(date.getMonth() + 1).padStart(2, '0')
+    // for (let i = -1; i <= 1; i++) {
+    //   // JavaScript's Date object will automatically handle year rollovers
+    //   const date = new Date(today.getFullYear(), today.getMonth() + i, 15)
+    //   const year = date.getFullYear()
+    //   const month = String(date.getMonth() + 1).padStart(2, '0')
 
-      schedules.push({
-        title: `${year}/${parseInt(month)} - Test scheduled maintenance`,
-        monitors: ['foo_monitor'],
-        body: 'Monthly scheduled maintenance',
-        start: `${year}-${month}-15T02:00:00.000+08:00`,
-        end: `${year}-${month}-15T04:00:00.000+08:00`,
-      })
-    }
-    return schedules
-  })(),
+    //   schedules.push({
+    //     title: `${year}/${parseInt(month)} - Test scheduled maintenance`,
+    //     monitors: ['foo_monitor'],
+    //     body: 'Monthly scheduled maintenance',
+    //     start: `${year}-${month}-15T02:00:00.000+08:00`,
+    //     end: `${year}-${month}-15T04:00:00.000+08:00`,
+    //   })
+    // }
+    // return schedules
+  // })(),
 ]
 
 // Don't forget this, otherwise compilation fails.

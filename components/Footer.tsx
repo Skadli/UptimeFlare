@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
       <Divider mt="lg" />
-      <Text
+      {/* <Text
         size="xs"
         mt="xs"
         mb="xs"
@@ -25,7 +25,7 @@ export default function Footer() {
           lyc8503
         </a>
         .
-      </Text>
+      </Text> */}
     </>
   )
 }
