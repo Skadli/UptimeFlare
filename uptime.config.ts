@@ -51,14 +51,14 @@ const workerConfig: WorkerConfig = {
       // [OPTIONAL] `hideLatencyChart` will hide status page latency chart if set to true
       // hideLatencyChart: false,
       // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
-      expectedCodes: [200],
+      // expectedCodes: [200],
       // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
       timeout: 10000,
       // [OPTIONAL] headers to be sent
-      headers: {
-        'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
-      },
+      // headers: {
+      //   'User-Agent': 'Uptimeflare',
+      //   Authorization: 'Bearer YOUR_TOKEN_HERE',
+      // },
       // [OPTIONAL] body to be sent
       body: 'Hello, meAI!',
       // [OPTIONAL] if specified, the response must contains the keyword to be considered as operational.
@@ -112,7 +112,7 @@ const workerConfig: WorkerConfig = {
       // `method` should be `TCP_PING` for tcp monitors
       method: 'get',
       // `target` should be `host:port` for tcp monitors
-      target: 'https://chatgpt.com',
+      target: 'https://status.openai.com/proxy/status.openai.com',
       tooltip: 'openai服务',
       statusPageLink: 'https://ai.mechat.top',
       timeout: 5000,
@@ -123,7 +123,7 @@ const workerConfig: WorkerConfig = {
       // `method` should be `TCP_PING` for tcp monitors
       method: 'get',
       // `target` should be `host:port` for tcp monitors
-      target: 'https://claude.ai/new',
+      target: 'https://status.claude.com/api/v2/status.json',
       tooltip: 'claude服务',
       statusPageLink: 'https://ai.mechat.top',
       timeout: 5000,
@@ -145,7 +145,7 @@ const workerConfig: WorkerConfig = {
       // `method` should be `TCP_PING` for tcp monitors
       method: 'get',
       // `target` should be `host:port` for tcp monitors
-      target: 'https://grok.com',
+      target: 'https://status.x.ai/grok-com/INC7977039a.txt?_rsc=jrxw1',
       tooltip: 'grok服务',
       statusPageLink: 'https://ai.mechat.top',
       timeout: 5000,
