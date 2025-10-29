@@ -2,7 +2,7 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  title: "meAI监控服务",
+  title: "meAI监控状态服务",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
     { link: 'https://www.mechat.top', label: 'meAI' },
@@ -15,7 +15,7 @@ const pageConfig: PageConfig = {
   group: {
     '🌐 meAI': ['home', 'ai', 'meAPI'],
     '🔐 Private': ['wz'],
-    'AI':['Openai','Claude','Gemini','Grok'],
+    // 'AI':['Openai','Claude','Gemini','Grok'],
   },
   // [OPTIONAL] Set the path to your favicon, default to '/favicon.ico' if not specified
   favicon: '/favicon.ico',
@@ -43,7 +43,7 @@ const workerConfig: WorkerConfig = {
       // `method` should be a valid HTTP Method
       method: 'get',
       // `target` is a valid URL
-      target: 'https://www.mechat.top',
+      target: 'https://mechat.top/index.html',
       // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
       tooltip: 'meAI主页',
       // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
@@ -90,7 +90,7 @@ const workerConfig: WorkerConfig = {
       // `method` should be `TCP_PING` for tcp monitors
       method: 'get',
       // `target` should be `host:port` for tcp monitors
-      target: 'https://api.mechat.top',
+      target: 'https://api.mechat.top/api/site/home',
       tooltip: 'api服务',
       statusPageLink: 'https://api.mechat.top',
       timeout: 5000,
@@ -106,50 +106,50 @@ const workerConfig: WorkerConfig = {
       statusPageLink: 'https://wz.690990.xyz',
       timeout: 5000,
     },
-    {
-      id: 'Openai',
-      name: 'openai服务',
-      // `method` should be `TCP_PING` for tcp monitors
-      method: 'get',
-      // `target` should be `host:port` for tcp monitors
-      target: 'https://status.openai.com/proxy/status.openai.com',
-      tooltip: 'openai服务',
-      statusPageLink: 'https://ai.mechat.top',
-      timeout: 5000,
-    },
-    {
-      id: 'Claude',
-      name: 'claude服务',
-      // `method` should be `TCP_PING` for tcp monitors
-      method: 'get',
-      // `target` should be `host:port` for tcp monitors
-      target: 'https://status.claude.com/api/v2/status.json',
-      tooltip: 'claude服务',
-      statusPageLink: 'https://ai.mechat.top',
-      timeout: 5000,
-    },
-    {
-      id: 'Gemini',
-      name: 'gemini服务',
-      // `method` should be `TCP_PING` for tcp monitors
-      method: 'get',
-      // `target` should be `host:port` for tcp monitors
-      target: 'https://aistudio.google.com/prompts/new_chat',
-      tooltip: 'gemini服务',
-      statusPageLink: 'https://ai.mechat.top',
-      timeout: 5000,
-    },
-    {
-      id: 'Grok',
-      name: 'grok服务',
-      // `method` should be `TCP_PING` for tcp monitors
-      method: 'get',
-      // `target` should be `host:port` for tcp monitors
-      target: 'https://status.x.ai/grok-com/INC7977039a.txt?_rsc=jrxw1',
-      tooltip: 'grok服务',
-      statusPageLink: 'https://ai.mechat.top',
-      timeout: 5000,
-    },
+    // {
+    //   id: 'Openai',
+    //   name: 'openai服务',
+    //   // `method` should be `TCP_PING` for tcp monitors
+    //   method: 'get',
+    //   // `target` should be `host:port` for tcp monitors
+    //   target: 'https://status.openai.com/proxy/status.openai.com',
+    //   tooltip: 'openai服务',
+    //   statusPageLink: 'https://ai.mechat.top',
+    //   timeout: 5000,
+    // },
+    // {
+    //   id: 'Claude',
+    //   name: 'claude服务',
+    //   // `method` should be `TCP_PING` for tcp monitors
+    //   method: 'get',
+    //   // `target` should be `host:port` for tcp monitors
+    //   target: 'https://status.claude.com/api/v2/status.json',
+    //   tooltip: 'claude服务',
+    //   statusPageLink: 'https://ai.mechat.top',
+    //   timeout: 5000,
+    // },
+    // {
+    //   id: 'Gemini',
+    //   name: 'gemini服务',
+    //   // `method` should be `TCP_PING` for tcp monitors
+    //   method: 'get',
+    //   // `target` should be `host:port` for tcp monitors
+    //   target: 'https://aistudio.google.com/prompts/new_chat',
+    //   tooltip: 'gemini服务',
+    //   statusPageLink: 'https://ai.mechat.top',
+    //   timeout: 5000,
+    // },
+    // {
+    //   id: 'Grok',
+    //   name: 'grok服务',
+    //   // `method` should be `TCP_PING` for tcp monitors
+    //   method: 'get',
+    //   // `target` should be `host:port` for tcp monitors
+    //   target: 'https://status.x.ai/grok-com/INC7977039a.txt?_rsc=jrxw1',
+    //   tooltip: 'grok服务',
+    //   statusPageLink: 'https://ai.mechat.top',
+    //   timeout: 5000,
+    // },
   ],
   // [Optional] Notification settings
   // notification: {

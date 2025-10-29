@@ -28,9 +28,9 @@ export default function Header({ style }: { style?: React.CSSProperties }) {
             href={location.pathname == '/' ? 'https://status.mechat.top' : '/'}
             target={location.pathname == '/' ? '_blank' : undefined}
           >
-            <Text size="xl" span>
+            {/* <Text size="xl" span>
               🕒
-            </Text>
+            </Text> */}
             <Text
               size="xl"
               span
@@ -38,7 +38,7 @@ export default function Header({ style }: { style?: React.CSSProperties }) {
               variant="gradient"
               gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
             >
-              meAI服务监控
+              meAI服务状态监控
             </Text>
           </a>
         </div>
