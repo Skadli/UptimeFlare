@@ -82,16 +82,15 @@ export async function getServerSideProps() {
 
   // Only present these values to client
   const monitors = workerConfig.monitors.map((monitor) => {
-    return {
+    const base: any = {
       id: monitor.id,
       name: monitor.name,
-      // @ts-ignore
-      tooltip: monitor?.tooltip,
-      // @ts-ignore
-      statusPageLink: monitor?.statusPageLink,
-      // @ts-ignore
-      hideLatencyChart: monitor?.hideLatencyChart,
+      // Ensure JSON-serializable values only
+      hideLatencyChart: monitor?.hideLatencyChart ?? false,
     }
+    if (monitor?.tooltip !== undefined) base.tooltip = monitor.tooltip
+    if (monitor?.statusPageLink !== undefined) base.statusPageLink = monitor.statusPageLink
+    return base
   })
 
   return { props: { state, monitors } }

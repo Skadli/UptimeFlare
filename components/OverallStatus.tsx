@@ -66,9 +66,9 @@ export default function OverallStatus({
     .filter((m) => now >= new Date(m.start) && (!m.end || now <= new Date(m.end)))
     .map((maintenance) => ({
       ...maintenance,
-      monitors: maintenance.monitors?.map(
-        (monitorId) => monitors.find((mon) => monitorId === mon.id)!
-      ),
+      monitors: maintenance.monitors
+        ?.map((monitorId) => monitors.find((mon) => monitorId === mon.id))
+        .filter((m): m is MonitorTarget => Boolean(m)),
     }))
 
   const upcomingMaintenances: (Omit<MaintenanceConfig, 'monitors'> & {
@@ -77,9 +77,9 @@ export default function OverallStatus({
     .filter((m) => now < new Date(m.start))
     .map((maintenance) => ({
       ...maintenance,
-      monitors: maintenance.monitors?.map(
-        (monitorId) => monitors.find((mon) => monitorId === mon.id)!
-      ),
+      monitors: maintenance.monitors
+        ?.map((monitorId) => monitors.find((mon) => monitorId === mon.id))
+        .filter((m): m is MonitorTarget => Boolean(m)),
     }))
 
   return (

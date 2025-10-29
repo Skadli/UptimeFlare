@@ -32,10 +32,12 @@ function filterIncidentsByMonth(
       const incidentMonth = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0')
       return incidentMonth === monthStr
     })
-    .map((e) => ({
-      ...e,
-      monitors: (e.monitors || []).map((e) => workerConfig.monitors.find((mon) => mon.id === e)!),
-    }))
+    .map((e) => {
+      const mapped = (e.monitors || [])
+        .map((id) => workerConfig.monitors.find((mon) => mon.id === id))
+        .filter((m): m is MonitorTarget => Boolean(m))
+      return { ...e, monitors: mapped }
+    })
     .sort((a, b) => (new Date(a.start) > new Date(b.start) ? -1 : 1))
 }
 
